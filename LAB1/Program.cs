@@ -223,6 +223,7 @@ namespace LAB1
                     {
                         x1 = -Math.Sqrt(x_1);
                         x2 = Math.Sqrt(x_1);
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("D = {0}", D);
                         Console.WriteLine("x1 = {0}", x1);
                         Console.WriteLine("x2 = {0}", x2);
@@ -232,6 +233,7 @@ namespace LAB1
                     {
                         x1 = -Math.Sqrt(x_2);
                         x2 = Math.Sqrt(x_2);
+                        Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("D = {0}", D);
                         Console.WriteLine("x1 = {0}", x1);
                         Console.WriteLine("x2 = {0}", x2);
