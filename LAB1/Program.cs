@@ -37,7 +37,208 @@ namespace LAB1
                 }
 
             }
+            double D, x1, x2, x3, x4;
+            if(a == 0)
+            {
+                if (b == 0)
+                {
+                    if (c == 0)
+                    {
+                        // 0 = 0
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("Уравнение имеет бесконечное множество решений");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        // c = 0 
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Решений нет");
+                        Console.ResetColor();
+                    }
+                }
+                else
+                {
+                    // уравнение вида b*x^2 + c = 0 
+                    D = -4 * b * c;
+                    if (D < 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("Решений нет");
+                        Console.ResetColor();
+                    }
+                    else if(D == 0)
+                    {
+                        // b*x^2 = 0 => x = 0
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("D = 0");
+                        Console.WriteLine("x = 0");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        x1 = -Math.Sqrt(D) / (2 * b);
+                        x2 =  Math.Sqrt(D) / (2 * b);
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("x1 = {0}", x1);
+                        Console.WriteLine("x2 = {0}", x2);
+                        Console.ResetColor();
+                    }
+                }
+            }
+            else if(b == 0)
+            {
+                if(c == 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("D = 0");
+                    Console.WriteLine("x = 0");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    // a*x^4 + c = 0
+                    D = -4 * a * c;
+                    if (D < 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("Решений нет");
+                        Console.ResetColor();
+                    }
+                    else if (D == 0)
+                    {
+                        // b*x^2 = 0 => x = 0
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("D = 0");
+                        Console.WriteLine("x = 0");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        double x_ = Math.Abs(Math.Sqrt(D) / (2 * a));
+                        x1 = -Math.Sqrt(x_);
+                        x2 = Math.Sqrt(x_);
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("x1 = {0}", x1);
+                        Console.WriteLine("x2 = {0}", x2);
+                        Console.ResetColor();
+                    }
 
+                }
+            }
+            else if(c == 0)
+            {
+                // a* x^4 + b* x^2 = x^2 * (a*x^2 + b)
+                D = -4 * a * b;
+                if( D < 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("x = 0");
+                    Console.ResetColor();
+                }
+                else
+                {
+                    x1 = -Math.Sqrt(D) / (2 * a);
+                    x2 = 0;
+                    x3 = Math.Sqrt(D) / (2 * a);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine("D = {0}", D);
+                    Console.WriteLine("x1 = {0}", x1);
+                    Console.WriteLine("x2 = {0}", x2);
+                    Console.WriteLine("x3 = {0}", x3);
+                    Console.ResetColor();
+                }
+            }
+            else
+            {
+                D = b * b - 4 * a * c;
+                if (D < 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("D = {0}", D);
+                    Console.WriteLine("Решений нет");
+                    Console.ResetColor();
+                }
+                else if(D == 0)
+                {
+                    double x_ = -b / (2 * a);
+                    if(x_ < 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("Решений нет");
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        x1 = -Math.Sqrt(x_);
+                        x2 =  Math.Sqrt(x_);
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("x1 = {0}", x1);
+                        Console.WriteLine("x2 = {0}", x2);
+                        Console.ResetColor();
+                    }
+                }
+                else
+                {
+                    double x_1 = (-b - Math.Sqrt(D)) / (2 * a);
+                    double x_2 = (-b + Math.Sqrt(D)) / (2 * a);
+                    if(x_1 < 0 && x_2 < 0)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("Решений нет");
+                        Console.ResetColor();
+                    }
+                    else if(x_1 > 0 && x_2 > 0)
+                    {
+                       if(x_1 > x_2)
+                        {
+                            x1 = -Math.Sqrt(x_1);
+                            x2 = -Math.Sqrt(x_2);
+                            x3 = Math.Sqrt(x_2);
+                            x4 = Math.Sqrt(x_1);
+                        }
+                        else
+                        {
+                            x1 = -Math.Sqrt(x_2);
+                            x2 = -Math.Sqrt(x_1);
+                            x3 = Math.Sqrt(x_1);
+                            x4 = Math.Sqrt(x_2);
+                        }
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("x1 = {0}",x1);
+                        Console.WriteLine("x2 = {0}", x2);
+                        Console.WriteLine("x3 = {0}", x3);
+                        Console.WriteLine("x4 = {0}", x4);
+                        Console.ResetColor();
+                    }
+                    else if (x_1 > 0)
+                    {
+                        x1 = -Math.Sqrt(x_1);
+                        x2 = Math.Sqrt(x_1);
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("x1 = {0}", x1);
+                        Console.WriteLine("x2 = {0}", x2);
+                        Console.ResetColor();
+                    }
+                    else
+                    {
+                        x1 = -Math.Sqrt(x_2);
+                        x2 = Math.Sqrt(x_2);
+                        Console.WriteLine("D = {0}", D);
+                        Console.WriteLine("x1 = {0}", x1);
+                        Console.WriteLine("x2 = {0}", x2);
+                        Console.ResetColor();
+                    }
+                }
+            }
         }
     }
 }
