@@ -263,6 +263,7 @@ namespace LAB1
                     }
                 }
             }
+            string close = Console.ReadLine();
         }
     }
 }
