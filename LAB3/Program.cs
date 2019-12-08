@@ -9,9 +9,39 @@ namespace LAB3
     {
         public static void Main()
         {
-            Rectangle r = new Rectangle(10, 10);
-            Square s = new Square(10);
-            Circle c = new Circle(1);
+       
+            double r1=0, r2=0, s1=0, c1=0;
+            bool correct = false;
+            while (correct == false)
+            {
+                Console.WriteLine("Введите ширину прямоугольника");
+                string str1 = Console.ReadLine();
+                Console.WriteLine("Введите высоту прямоугольника");
+                string str2 = Console.ReadLine();
+                Console.WriteLine("Введите длину стороны квадрата");
+                string str3 = Console.ReadLine();
+                Console.WriteLine("Введите радиус окружности");
+                string str4 = Console.ReadLine();
+                if (double.TryParse(str1, out r1) && double.TryParse(str2, out r2) && double.TryParse(str3, out s1) && double.TryParse(str4, out c1))
+                {
+                    r1 = double.Parse(str1);
+                    r2 = double.Parse(str2);
+                    s1 = double.Parse(str3);
+                    c1 = double.Parse(str4);
+                    correct = true;
+                }
+                else
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Коэффициенты введены некорректно.");
+                    Console.WriteLine("Пожалуйста, повторите ввод данных.");
+                    Console.ResetColor();
+                }
+
+            }
+            Rectangle r = new Rectangle(r1, r2);
+            Square s = new Square(s1);
+            Circle c = new Circle(c1);
             ArrayList list = new ArrayList();
             list.Add(r);
             list.Add(s);
