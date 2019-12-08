@@ -47,10 +47,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SimpleList.cs" />
     <Compile Include="SimpleStack.cs" />
-    <Compile Include="Square.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="ClassDia_3.cd" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LAB2\LAB2.csproj">
