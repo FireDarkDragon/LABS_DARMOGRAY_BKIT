@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace Lab2
+namespace LAB2
 {
     public abstract class Figure : IComparable<Figure>
     {
