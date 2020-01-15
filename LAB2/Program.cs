@@ -10,7 +10,13 @@ namespace LAB2
     {
         static void Main(string[] args)
         {
-           
+            Rectangle rect_example = new Rectangle(4, 3);
+            Square square_example = new Square(6);
+            Circle circle_example = new Circle(5);
+
+            rect_example.Print();
+            square_example.Print();
+            circle_example.Print();
         }
     }
 }
