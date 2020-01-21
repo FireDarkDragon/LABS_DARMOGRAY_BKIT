@@ -9,6 +9,7 @@ namespace LAB3
     {
         public static void Main()
         {
+            Console.Title = "Дармограй Артем ИУ5-32Б";
             Rectangle r = new Rectangle(11, 13);
             Square s = new Square(11);
             Circle c = new Circle(11.13);
